@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Careerer | Register</title>
+        <link rel="icon" href="images/favicon.ico">
+        <link rel="stylesheet" href="style.css">
+        <script>
+            function ValidationCheck(form) {
+                let isValid = true;
+                let email = document.getElementById("email").value.trim();
+                let confirmEmail = document.getElementById("confirmEmail").value.trim();
+
+                document.getElementById("errorName").innerHTML = "";
+                document.getElementById("errorEmail").innerHTML = "";
+                document.getElementById("errorConfirmEmail").innerHTML = "";
+
+                if (document.getElementById("name").value.trim() === "") {
+                    document.getElementById("errorName").innerHTML = "Name is required"
+                    isValid = false;
+                }
+                if (document.getElementById("email").value.trim() === "") {
+                    document.getElementById("errorEmail").innerHTML = "Email is required"
+                    isValid = false;
+                }
+                switch (true) {
+                    case confirmEmail === "":
+                    document.getElementById("errorConfirmEmail").innerHTML = "Confirming email is required"
+                    isValid = false;
+                    break;
+
+                    case confirmEmail !== email:
+                    document.getElementById("errorConfirmEmail").innerHTML = "Emails do not match"
+                    isValid = false;
+                    break;
+                }
+                return isValid;
+                
+            }
+        </script>
+    </head>
+    <body>
+        <div style="width: 100%;">
+            <nav class="menu">
+                <a href="home.html" class="logo-link">
+                    <img src="images/careererlogo.png" alt="Careerer Logo" class="logo">
+                </a>
+                <a href="about-us.html" class="menu-link">About Us</a>
+                <a href="our-mission.html" class="menu-link">Our Mission</a>
+                <a href="features.html" class="menu-link">Explore Features</a>
+                <a href="faq.html" class="menu-link">FAQ</a>
+                <a href="register.html" class="register">Register</a>
+            </nav>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+        <div class="regform">
+            <form onsubmit="return ValidationCheck(this)">
+                <h1 style="font-family: mont;">Register for Careerer</h1>
+                <p style="font-family: monts; margin-bottom: 80px;">Please note that registering will not create an account for Careerer.<br> This will only notify you when Careerer launches.</p>
+                
+                <h2 style="font-size: 20px; font-family: montm;">Enter your name</h2>
+                <input type="text" placeholder="Your Name" name="InputName" id="name">
+                <p id="errorName" class="error-message"></p>
+                
+                <h2 style="font-size: 20px; font-family: montm;">Enter your email</h2>
+                <input type="email" placeholder="Email" id="email">
+                <p id="errorEmail" class="error-message"></p>
+
+                <h2 style="font-size: 20px; font-family: montm;">Confirm your email</h2>
+                <input type="email" placeholder="Email" id="confirmEmail">
+                <p id="errorConfirmEmail" class="error-message"></p>
+                
+                <label class="check-container">
+                   <input type="checkbox">
+                   <span>Send me updates about promotions</span>
+                </label>
+
+                <label class="check-container">
+                    <input type="checkbox">
+                    <span>Send me updates about our business partners</span>
+                </label>
+
+                <button type="submit">Register</button>
+                
+            </form>
+            
+            
+        </div>
+        
+        
+        
+        
+        
+
+
+
+
+
+
+        
+        <footer class="footer">
+            <div style="display: flex; justify-content: center;">
+                <div>
+                    <h3>Careerer</h3>
+                    <p>Your AI Powered <br>Career Guide</p>
+                </div>
+                <div class="footer-links" style="margin: 0 100px 0 100px;">
+                    <h3>Quick Links</h3>
+                    <a href="legal.html">Legal</a><br>
+                    <a href="accessibility.html">Accessibility</a>
+                </div>
+                <div>
+                    <h3>Contact</h3>
+                    <p>info@careerer.com<br>Docklands, London, UK</p>
+                </div>
+            </div>
+            <div style="border-top: 2px solid #f8e8d9;">
+                <p style="text-align: center;">© Careerer 2026. All Rights Reserved</p>
+            </div>
+        </footer>
+    </body>
+</html>
